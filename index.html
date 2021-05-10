@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <title>AWS Lambda - The Army Swiss Knife (?)</title>
+  <meta name="description"
+    content="A presentation about the capabilities using AWS Lambda" />
+
+  <!-- URL CANONICAL -->
+  <link rel="canonical" href="https://github.com/jolo-dev/aws-lambda-army-swiss-knife" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono&amp;display=swap" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+  <!-- CSS WebSlides -->
+  <link rel="stylesheet" type="text/css" media="all" href="static/css/webslides.css" />
+
+  <link rel="stylesheet" type="text/css" media="all"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+  <!-- Custom Style -->
+  <link rel="stylesheet" type="text/css" media="all" href="static/css/style.css" />
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#333333" />
+</head>
+
+<body>
+  <main role="main">
+    <article id="webslides" class="vertical">
+      <section>
+        <h1 class="fadeInDown">AWS Lambda - The Army Swiss Knife (?)</h1>
+        <div class="animate subtitle">John Nguyen</div>
+        <p>
+          <img class="fadeInUp" src="./static/img/swiss-knife.png" alt="AWS Lambda as an Army Swiss Knife" />
+        </p>
+      </section>
+
+      <section>
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap intro">
+          <h1 class="about-me"><strong>About Me</strong></h1>
+          <div class="img">
+            <img class="fadeInUp" src="https://www.prisma-capacity.eu/sites/default/files/2019-08/John_option2_0.jpg"
+              alt="JohnPrisma" />
+          </div>
+          <div class="name fadeInDown">
+            <h1><strong>John Nguyen</strong></h1>
+            <div class="animate name-subtitle">Full-Stack // Data/DevOps Engineer</div>
+            <div id="social-media">
+              <span>
+                <a class="social-link" href="https://codepen.io/jolo-dev/" target="_blank">
+                  <i class="fab fa-codepen"></i>
+                </a>
+              </span>
+              <span>
+                <a class="social-link" href="https://github.com/jolo-dev" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+              </span>
+              <span>
+                <a class="social-link" href="https://twitter.com/JohnysCrazy" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </span>
+              <span>
+                <a class="social-link" href="https://www.linkedin.com/in/john-long-nguyen-256457111/" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </span>
+              <span>
+                <a class="social-link" href="https://jolodev.guru/" target="_blank">
+                  <i class="fas fa-globe"></i>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section>
+        <div class="wrap size-50 aligncenter">
+          <h1><strong>Agenda</strong></h1>
+          <div class="agenda-box fadeInUp bg-white shadow">
+            <ul class="flexblock reasons">
+              <li>
+                <h2>AWS Lambda</h2>
+                <p>What it is and its purpose</p>
+              </li>
+              <li>
+                <h2>Microservice</h2>
+                <p>HTTP-Based Lambdas with SST</p>
+              </li>
+              <li>
+                <h2>ETL</h2>
+                <p>Asynchronous Lambdas ETL-Jobs with Serverless Framework</p>
+              </li>
+              <li>
+                <h2>Fullstack</h2>
+                <p>Let's see if Django or Ruby on Rails works</p>
+              </li>
+              <li>
+                <h2>Machine Learning</h2>
+                <p>Is Lambda able to do ML?</p>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+      </section>
+
+      <section class="slide-bottom fullscreen bg-dark">
+        <!-- <span class="background" style="background-image:url('https://i.ytimg.com/vi/9eHoyUVo-yg/maxresdefault.jpg')"></span> -->
+        <div class="embed light">
+          <div data-youtube data-youtube-id="9eHoyUVo-yg" data-autoplay data-mute data-loop data-muted></div>
+        </div>
+        <div class="wrap">
+          <div class="content-left">
+            <h1>
+              <a style="color: white; text-decoration: underline;" target="_blank"
+                href="https://www.youtube.com/watch?v=9eHoyUVo-yg">
+                <span class="animate">AWS Re:Invent 2014</span>
+              </a>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="fullscreen">
+        <div class="card-50">
+          <img class="zoomIn" width="50%"
+            src="https://cloudncode.files.wordpress.com/2017/03/2000px-orange_lambda-svg.png?w=1148" alt="AWS Lambda" />
+          <!-- end figure-->
+          <div class="flex-content">
+            <h2>AWS Lambda</h2>
+            <p>Run code without thinking about servers.</p>
+            <p class="text-intro">
+            <ul>
+              <li>Event-driven, serverless computing</li>
+              <li>Managed by AWS</li>
+              <li>Focusing on business logic instead of managing Operations</li>
+              <li>Naming from Computer Science which abstracts underlying function</li>
+            </ul>
+            </p>
+            <ul class="description">
+              <li><strong class="text-label">Role:</strong> Compute</li>
+              <li><strong class="text-label">Runtime:</strong> Node.js, Python, Java, Go, C#, Custom</li>
+              <li><strong class="text-label">Year:</strong> 2014</li>
+            </ul>
+          </div>
+          <!-- end .flex-content-->
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap aligncenter">
+          <h1>What is Serverless?</h1>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2><strong>Serverless</strong></h2>
+          <ul class="flexblock features">
+            <li>
+              <div>
+                <h2>
+                  <!-- <img src="static/img/serverless-seeklogo.com.svg" alt="serverless"> -->
+                  <object style="width: 80px;" data="static/img/serverless-seeklogo.com.svg"
+                    type="image/svg+xml"></object>
+                  <span class="animate">Care less about Server</span>
+                </h2>
+                Less frictions about underlying infrastructure and ops-tasks
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="icons fas fa-money-check-alt"></i>
+                  <span class="animate">Pay-As-You-Go</span>
+                </h2>
+                You pay only the execution time.
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="icons fas fa-balance-scale"></i>
+                  <span class="animate">Automatic Scaling</span>
+                </h2>
+                No worrying about Scale-Out and In
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="icons fas fa-signal"></i>
+                  <span class="animate">High available</span>
+                </h2>
+                Always available as Cloud provider available ;)
+              </div>
+            </li>
+            <li>
+              <div>
+                <h2>
+                  <i class="icons far fa-file-code"></i>
+                  <span class="animate">Developer Friendly</span>
+                </h2>
+                Developer is not stuck to a particular programming language
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </article>
+    <!-- end article -->
+  </main>
+  <!-- end main -->
+
+  <!-- Required -->
+  <script src="static/js/webslides.min.js"></script>
+  <script src="static/js/highlight.pack.js"></script>
+  <script src="static/js/script.js"></script>
+</body>
+
+</html>
