@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  fullstack-ruby:
+    build:
+      context: '.'
+      dockerfile: Dockerfile-build
+    environment:
+      - RAILS_ENV=${RAILS_ENV-development}
+      - SAM_CLI_TELEMETRY=0
+      - AWS_PROFILE=${AWS_PROFILE-default}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION-us-east-1}
+    volumes:
+      - ${HOME}/.aws:/root/.aws
+      - ${HOME}/.ssh/known_hosts:/root/.ssh/known_hosts
+      - ${PWD}:/var/task
+      - /var/run/docker.sock:/var/run/docker.sock
