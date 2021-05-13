@@ -1,0 +1,8 @@
+
+---
+dev:
+  
+  
+  django_settings: django_zappa_lambda.settings
+  
+  s3_bucket: django-zappa-lambda-jolo-dev
