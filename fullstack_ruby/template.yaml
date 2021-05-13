@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: FullstackRuby
+
+Parameters:
+
+  RailsEnv:
+    Type: String
+    Default: staging
+    AllowedValues:
+      - staging
+      - production
+
+Globals:
+
+  Function:
+    Environment:
+      Variables:
+        RAILS_ENV: !Ref RailsEnv
+
+Resources:
+
+  RailsLambda:
+    Type: AWS::Serverless::Function
+    Metadata:
+      DockerContext: ./.lamby/RailsLambda
+      Dockerfile: Dockerfile
+      DockerTag: web
+      DockerBuildArgs:
+        RAILS_ENV: !Ref RailsEnv
+    Properties:
+      AutoPublishAlias: live
+      Events:
+        HttpApiProxy:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref RailsHttpApi
+      MemorySize: 1792
+      PackageType: Image
+      Timeout: 30
+
+  RailsHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Ref RailsEnv
+
+Outputs:
+
+  FullstackRubyHttpApiUrl:
+    Description: Lambda Invoke URL
+    Value: !Sub https://${RailsHttpApi}.execute-api.${AWS::Region}.amazonaws.com/${RailsEnv}/
+
+  FullstackRubyLambdaResourceArn:
+    Description: Lambda ARN
+    Value: RailsLambda.Arn
