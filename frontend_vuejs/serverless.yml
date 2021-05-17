@@ -1,0 +1,32 @@
+service: frontend-lambda-vuejs
+
+plugins:
+  - serverless-offline
+  - serverless-esbuild
+
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: eu-central-1
+  profile: default
+
+package:
+  exclude:
+    - node_modules/**
+    - pages/**
+    - public/**
+  include:
+    - handler.js
+    - dist/**
+
+functions:
+  index:
+    handler: handler.vue
+    events:
+      - http: ANY /
+      - http: ANY /{proxy}
