@@ -19,6 +19,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    "polls.apps.PollsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -26,6 +27,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_s3_storage",
+    "zappa_django_utils"
 ]
 
 MIDDLEWARE = [
@@ -62,12 +64,16 @@ WSGI_APPLICATION = "django_zappa_lambda.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'django',
+        'PASSWORD': 'wzPwJ1AD8sTOziu2Z8Hk',
+        'HOST': 'fullstackdjango.cluster-cprsqdpnrhrc.eu-central-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
@@ -102,7 +108,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-YOUR_S3_BUCKET = "django-zappa-lambda-django"
+YOUR_S3_BUCKET = "django-zappa-lambda-jolo-dev"
 
 STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
 AWS_S3_BUCKET_NAME_STATIC = YOUR_S3_BUCKET
