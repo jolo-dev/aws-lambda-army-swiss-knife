@@ -104,18 +104,8 @@ h1 span {
   height: 500px;
 }
 
-footer .wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-footer .download {
-  text-align: end;
-}
-footer .download button {
-  border-radius: 10px;
-}
-footer .download button a {
-  color: white;
+header {
+  padding: 0;
 }
 
 .fab,
@@ -334,6 +324,18 @@ span.animate {
 }
 .animate span:nth-of-type(34) {
   animation-delay: 1.65s;
+}
+.animate span:nth-of-type(35) {
+  animation-delay: 1.7s;
+}
+.animate span:nth-of-type(36) {
+  animation-delay: 1.75s;
+}
+.animate span:nth-of-type(37) {
+  animation-delay: 1.8s;
+}
+.animate span:nth-of-type(38) {
+  animation-delay: 1.85s;
 }
 /* Animation Three */
 

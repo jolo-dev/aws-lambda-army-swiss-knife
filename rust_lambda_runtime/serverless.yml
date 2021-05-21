@@ -1,0 +1,15 @@
+service: rust-lambda-runtime
+provider:
+  name: aws
+  runtime: rust
+  memorySize: 128
+
+package:
+  individually: true
+
+plugins:
+  - serverless-rust
+
+functions:
+  hello:
+    handler: hello
