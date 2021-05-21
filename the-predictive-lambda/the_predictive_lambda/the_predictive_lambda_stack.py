@@ -16,8 +16,8 @@ class ThePredictiveLambdaStack(core.Stack):
         model_folder = os.path.dirname(os.path.realpath(__file__)) + "/../model"
         predictive_lambda = _lambda.DockerImageFunction(self, 'PredictiveLambda',
                                                         code=_lambda.DockerImageCode.from_image_asset(model_folder),
-                                                        memory_size=4096,
-                                                        timeout=core.Duration.seconds(15))
+                                                        memory_size=8192,
+                                                        timeout=core.Duration.seconds(240))
         # defines an API Gateway Http API resource backed by our "PredictiveLambda" function.
         api = api_gw.HttpApi(self, 'PredictiveLambdaEndpoint',
                              default_integration=integrations.LambdaProxyIntegration(handler=predictive_lambda));
