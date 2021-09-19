@@ -5,7 +5,7 @@ subtitle: Capabilities and maybe Best Practices
 lineNumbers: true
 preload: false
 layout: intro
-introImage: public/img/swiss-knife.png
+introImage: /img/swiss-knife.png
 drawings: 
   enabled: dev
 ---
@@ -104,7 +104,7 @@ Machine learning (ML) is the process of using mathematical models of data to hel
 preload: false
 layout: right-image-animation
 rightColSpan: 2
-image: public/img/keras-tensorflow.png
+image: /img/keras-tensorflow.png
 
 ---
 
@@ -255,7 +255,7 @@ MyFunction:
 ---
 layout: left-image-animation
 preload: false
-image: public/img/swiss-knife.png
+image: /img/swiss-knife.png
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: image-right
-image: 'public/img/elt_architecture.png'
+image: '/img/elt_architecture.png'
 
 ---
 

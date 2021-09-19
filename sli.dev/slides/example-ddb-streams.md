@@ -1,6 +1,6 @@
 ---
 layout: image-right
-image: 'public/img/etl_architecture_with_streams.png'
+image: '/img/etl_architecture_with_streams.png'
 
 ---
 

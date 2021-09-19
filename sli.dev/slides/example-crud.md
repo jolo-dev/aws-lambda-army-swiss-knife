@@ -1,6 +1,6 @@
 ---
 layout: image-right
-image: 'public/img/microservice.png'
+image: '/img/microservice.png'
 
 ---
 
