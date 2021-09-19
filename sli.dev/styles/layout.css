@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('../public/fonts/OpenSans-Light.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vivala-Code';
+  src: url('../public/fonts/Vivala-Code.ttf') format('truetype'),
+    url('../public/fonts/Vivala-Code.ttf') format('eot');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: url('../public/fonts/OpenSans-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+.slidev-layout {
+  font-family: 'OpenSans-Light' !important;
+  background-color: #280045ff !important;
+  color: white;
+  background-image: url('../public/img/logowhite.png');
+  background-repeat: no-repeat;
+  background-position: 95% 95%;
+  background-size: 20%;
+  @apply h-full grid content-center;
+
+  h1,
+  h2 {
+    font-family: 'Vivala-Code';
+    color: white;
+  }
+
+  h1 {
+    @apply text-6xl content-center;
+  }
+  h2 {
+    @apply text-4xl content-center;
+  }
+  h3 {
+    font-family: 'OpenSans-SemiBold';
+    color: #00ecbd;
+    @apply text-2xl leading-20 -mt-5;
+  }
+  iframe {
+    padding: 0;
+    width: 1000px;
+    height: 600px;
+    margin-left: -6%;
+  }
+}
+
+.grid.grid-cols-2.w-full.h-full {
+  background-color: whitesmoke;
+  .w-full {
+    background-size: 60% !important;
+  }
+}
+
+.slidev-vclick-target {
+  transition: all 500ms ease;
+}
+
+.slidev-vclick-hidden {
+  transform: translateX(100%);
+}

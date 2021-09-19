@@ -1,0 +1,40 @@
+{
+  "name": "slidev-theme-globaldatanet-theme",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=14.0.0",
+    "slidev": ">=0.19.3"
+  },
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "//": "Learn more: https://sli.dev/themes/write-a-theme.html",
+  "slidev": {
+    "colorSchema": "both",
+    "highlighter": "all",
+    "defaults": {
+      "fonts": {
+        "sans": "Nunito Sans",
+        "mono": "Fira Code"
+      },
+      "hightlighter": "prism"
+    }
+  },
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md",
+    "export": "slidev export slides.md",
+    "screenshot": "slidev export slides.md --format png"
+  },
+  "dependencies": {
+    "@slidev/types": "^0.23.0",
+    "codemirror-theme-vars": "^0.1.1",
+    "prism-theme-vars": "^0.2.2",
+    "sass": "^1.39.0",
+    "theme-vitesse": "^0.1.12"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^0.23.0"
+  }
+}
