@@ -17,7 +17,10 @@ const cols: number = leftColSpan + rightColSpan
 
 <template>
   <div class="slidev-layout">
-    <div class="grid place-items-center" :grid="`~ cols-${cols} gap-4`">
+    <div
+      :class="`grid place-items-center grid-cols-${cols}`"
+      :grid="`~ cols-${cols} gap-4`"
+    >
       <img
         v-motion
         :initial="{ x: -80 }"
