@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request, json
 from flask_basicauth import BasicAuth
-from keras import backend as K
-from model import predict
+# from keras import backend as K
+# from model import predict
+import requests
+import os
+
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
 app = Flask(__name__)
 
@@ -17,23 +21,24 @@ def index():
     return render_template("index.html")
 
 
-# @app.route("/predict", methods=["POST"])
-# def rest_predict():
-#     # Before prediction
-#     K.clear_session()
-#     image = str(
-#         request.form.get("image")
-#         if request.form.get("image") != ""
-#         else request.args.get("image")
-#     )
-#     animal = predict(image)
-#     result = {"result": animal}
-#     response = app.response_class(
-#         response=json.dumps(result), status=200, mimetype="application/json"
-#     )
-#     # Before prediction
-#     K.clear_session()
-#     return response
+@app.route("/predict", methods=["POST"])
+def rest_predict():
+    image = str(
+        request.form.get("image")
+        if request.form.get("image") != ""
+        else request.args.get("image")
+    )
+    print(image)
+    url = 'https://27bmvdh2wrwttmm2grlai76vbq0pfgnr.lambda-url.eu-central-1.on.aws/'
+    myobj = {'image_path': image}
+
+    result = requests.post(url, json = myobj)
+    print(result.json())
+    response = app.response_class(
+        response=json.dumps(result.json()), status=200, mimetype="application/json"
+    )
+    # # K.clear_session()
+    return response
 
 
-app.run(host="0.0.0.0", port=5000, debug=True)
+app.run(host="0.0.0.0", port=8888, debug=True)

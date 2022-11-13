@@ -13,7 +13,7 @@ SECRET_KEY = "-8o*33=a3ag0ao(ho4oqmsdjj9lf%gze+6zsv0a(n_)m6&m&u#"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ulporrh5n2.execute-api.eu-central-1.amazonaws.com"]
+ALLOWED_HOSTS = ["tn90ew6fwd.execute-api.eu-central-1.amazonaws.com"]
 
 
 # Application definition
@@ -70,7 +70,7 @@ DATABASES = {
         "NAME": "postgres",
         "USER": "postgres",
         "PASSWORD": "postgres",
-        "HOST": "django-zappa-dem.cbsnfophkma3.eu-central-1.rds.amazonaws.com",
+        "HOST": "django-aws-ug-instance-1.cubdvhyxekii.eu-central-1.rds.amazonaws.com",
         "PORT": "5432",
     }
 }

@@ -3,13 +3,14 @@
 dev:
   django_settings: django_zappa_lambda.settings
   s3_bucket: django-zappa-john-demo
-  profile_name: gdn-lab
+  profile_name: ffm-sandbox
   keep_warm: false
   # manage_roles: false
   # role_name: Zappa-John-Demo
   vpc_config:
     SubnetIds:
-      - subnet-d8d3e0a5
-      - subnet-efc0c6a2
+      - subnet-014c17506174d9b21
+      - subnet-07084f6101e312b4a
+      - subnet-01b12669fffe7546d
     SecurityGroupIds:
-      - sg-ae76bace
+      - sg-071ba52c5f9595c2e

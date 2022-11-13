@@ -1,11 +1,9 @@
-FROM python:3.7-buster
+FROM public.ecr.aws/lambda/python:3.9
 
-COPY . /home
+COPY . ${LAMBDA_TASK_ROOT}
 
-WORKDIR /home
+# WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
-
-ENTRYPOINT ["./entrypoint.sh"]
+CMD [ "handler.cat_or_dog" ]

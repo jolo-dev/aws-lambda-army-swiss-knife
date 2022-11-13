@@ -18,7 +18,7 @@ def predict(original_image):
     """
     model = _construct_model()
     model.load_weights(
-        _get_weights("https://challenge.dkb-ai.cloud/DevOps/data/cats_and_dogs.h5")
+        "./cats_and_dogs.h5"
     )
 
     image = _preprocess_image(original_image)
